@@ -1,4 +1,5 @@
+opencv-contrib-python
 ghostscript==0.7
-camelot-py[base]
+camelot-py
 numpy==1.22.0
 pandas==1.4.1

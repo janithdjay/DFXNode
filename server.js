@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
         cb(null, "public")
     },
     filename: function (req, file, cb) {
-        pdfName = file.fieldname + '-' + Date.now() + '.pdf';
+        pdfName = Date.now() + '.pdf';
         cb(null, pdfName)
     },
     fileFilter: function (req, file, cb) {
@@ -27,16 +27,6 @@ const storage = multer.diskStorage({
             cb(null, true)
         }
     }
-})
-
-console.log( process.env.PATH );
-const dailyFX = spawn('python', ['dailyfx.py'])
-dailyFX.stdout.on('data', (data) => {
-    console.log('line 34 ' + data)
-})
-
-dailyFX.stderr.on('data', (data) => {
-    console.log('line 38 ' + data)
 })
 
 //Set up Multer
@@ -75,10 +65,9 @@ app.post('/pdf', jsonParser, upload.single("myPDF"), (req, res) => {
     //}
 
     if (req.file) {
-        console.log(pdfName)
-        const dailyFX = spawn('python', ['dailyfx.py'])
+        console.log('line 78: ' + pdfName)
+        const dailyFX = spawn('python', ['dailyfx.py', pdfName])
         dailyFX.stdout.on('data', (data) => {
-            console.log('line 71 ' + data)
             var datafrompy = JSON.stringify(data)
             var arr = JSON.parse(datafrompy);
             for (var i = 0; i < arr.length; i++) {
@@ -91,7 +80,7 @@ app.post('/pdf', jsonParser, upload.single("myPDF"), (req, res) => {
         })
 
         dailyFX.stderr.on('data', (data) => {
-            console.log('line 84 ' + data)
+            console.log('line 94: ' + data)
         })
 
         res.status(200).send({
