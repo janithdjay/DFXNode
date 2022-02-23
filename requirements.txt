@@ -1,4 +1,4 @@
-camelot-py==0.10.1
+camelot==0.10.1
 ghostscript==0.7
 numpy==1.22.0
 pandas==1.4.1
