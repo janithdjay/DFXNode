@@ -1,13 +1,10 @@
 import os
 import sys
-#import camelot
-import json
-from pathlib import Path
-import requests
 import pandas as pd
 import ghostscript
+import camelot
 
-pdfName = str(sys.argv[1])
+#pdfName = str(sys.argv[1])
 
 #table = camelot.read_pdf("./public/" + pdfName, flavor='lattice') 
 #table1 = table[0].df

@@ -29,6 +29,11 @@ const storage = multer.diskStorage({
     }
 })
 
+const dailyFX = spawn('python', ['dailyfx.py'])
+dailyFX.stdout.on('data', (data) => {
+    console.log(data)
+})
+
 //Set up Multer
 const upload = multer({ storage: storage })
 
