@@ -13,4 +13,4 @@ table1 = table1[1:] #take the data less the header row
 table1.columns = new_header
 table1.reset_index(drop=True)
 out = table1.to_json(orient='records')
-print("works ok ", pdfName)
+print(out)
