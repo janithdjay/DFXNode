@@ -1,5 +1,5 @@
 opencv-contrib-python==4.5.5.62
 ghostscript==0.7
-git+https://github.com/camelot-dev/camelot.git
+camelot-py
 numpy==1.22.0
 pandas==1.4.1

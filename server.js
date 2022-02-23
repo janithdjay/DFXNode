@@ -29,9 +29,9 @@ const storage = multer.diskStorage({
     }
 })
 
-const dailyFX = spawn('python', ['dailyfx.py'])
+const dailyFX = spawn('python', ['dailyfx.py', 'test'])
 dailyFX.stdout.on('data', (data) => {
-    console.log(data)
+    console.log(`${data}`)
 })
 
 //Set up Multer
