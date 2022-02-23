@@ -1,3 +1,4 @@
+pandas==1.4.1
 camelot-py==0.10.1
 cffi==1.15.0
 chardet==4.0.0
@@ -9,7 +10,6 @@ ghostscript==0.7
 numpy==1.22.2
 opencv-python==4.5.5.62
 openpyxl==3.0.9
-pandas==1.4.1
 pdfminer.six==20211012
 pdftopng==0.2.3
 pycparser==2.21
