@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Open+Sans&display=swap');
+
+.body {
+    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navBar {
+    background-color: black;
+}
+
+.navbar-brand {
+    color: white;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-link.active {
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 1.1em;
+}
+
+.featureCard {
+    border-radius: 3px;
+    background-color: aliceblue;
+    padding: 15px;
+    margin: 2px;
+}
+
+.featureImg {
+    width: 128px !important;
+    height: 128px;
+    object-fit: cover;
+    object-position: center;
+}
+
+#buyRate:valid {
+    color: green;
+}
+
+#buyRate:invalid {
+    color: red;
+}

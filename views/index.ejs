@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+        <div class="container my-4">
+
+            <!-- Heading -->
+            <h2 class="font-weight-bold">Welcome to the Quick Update Portal</h2>
+            <h4 class="mb-5 text-muted">You can now update latest FX Rates, daily regulatory documents & advisories
+                in an instant.</h4>
+
+            <!--Grid row-->
+            <div class="row mb-4">
+
+                <!--Grid column-->
+                <div class="container">
+
+                    <!-- Description -->
+                    <p class="grey-text">
+                        We've created this toolkit to help you with the process of uploading selected time sensitive
+                        regulatory updates on your website. We've recently put together everything you need to
+                        accomplish this and eliminate any bottlenecks in the current process and to improve
+                        efficiency.</p>
+
+                    <p class="grey-text">
+                        If you are familiar with the current process of submitting a request to GPS (Global
+                        Publishing Services), please continue straight to the below section to select the type of
+                        update you require. If not, please take a look at the Help section, to view our easy to
+                        navigate guides, and the key points you should follow when submitting updates.</p>
+
+                    <p class="grey-text">
+                        This platform was brought to you by GPS and we actively maintain this. If you face any
+                        technical issues please submit a bug report <a href="#"
+                            class="fw-bold text-decoration-none">here</a>.</p>
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+            <!--Grid row-->
+            <div class="row">
+                <div class="col-md-4 mb-2">
+                    <div class="card h-100">
+                        <img src="/imgs/easy-to-use.png" class="card-img-top featureImg mx-auto d-block p-2" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Easy to use</h5>
+                            <p class="card-text">
+                                With clear navigations and minimal steps, this toolkit provides an interface to
+                                easily upload/update data to your website.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="card h-100">
+                        <img src="/imgs/instant-message.png" class="card-img-top featureImg mx-auto d-block p-2"
+                            alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Instant updates</h5>
+                            <p class="card-text">
+                                This toolkit eliminate reworks and improve efficiency of recurring tasks. Your data
+                                will be instantly updated on the website.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="card h-100">
+                        <img src="/imgs/file.png" class="card-img-top featureImg mx-auto d-block p-2" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Various document types</h5>
+                            <p class="card-text">
+                                Currently this toolkit allows you to upload/update FX Rates and regulatory
+                                documents and we will be introducing more soon.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <h3>Update FX Rates</h3>
+                <div class="col-12 col-md-6 updateColumn">
+                    <h4 class="text-center text-muted">Submit your details</h4>
+                    <form class="my-3">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label class="form-label" for="pickCountry">Select the country</label>
+                                    <select class="form-select shadow-none" aria-label="Default select example"
+                                        id="pickCountry">
+                                        <option selected value="default"> - Country - </option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label class="form-label" for="pickLanguage">Select the Language</label>
+                                    <select class="form-select shadow-none" aria-label="Default select example"
+                                        id="pickLanguage">
+                                        <option selected value="default"> - Language - </option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3" style="display: none;">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <table class="table-responsive table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">KRAJ/ COUNTRY</th>
+                                        <th scope="col">WALUTA/ CCY</th>
+                                        <th scope="col">KUPNO/ BUY</th>
+                                        <th scope="col">SPRZEDAZ/ SELL</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>EURO</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>USA</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>UK</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>SWITZERLAND</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ARMENIA</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>AUSTRALIA</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>BULGARY</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CHINA</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CZECH REPUBLIC</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>DENMARK</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>HONG KONG</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ISRAEL</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td>JAPAN</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td>CANADA</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td>NORWAY</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td>NEW ZEALAND</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td>RUSSIA</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td>ROMANIA</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td>SWEEDEN</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>TURKEY</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>HUNGARY</td>
+                                        <td>Otto</td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                        <td><input type="text" minlength="6" maxlength="6" pattern="[0-9,]{6,2554}"
+                                                class="form-control shadow-none" id="buyRate" autocomplete="off"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">I confirm the details are
+                                accurate</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h4 class="text-center text-muted">I have a PDF</h4>
+                    <div class="container">
+                        <form method="POST" action="/pdf" enctype="multipart/form-data">
+                            <input type="file" name="myPDF" />
+                            <input type="submit" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>
