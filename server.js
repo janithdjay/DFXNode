@@ -65,17 +65,17 @@ app.post('/pdf', jsonParser, upload.single("myPDF"), (req, res) => {
     //}
 
     if (req.file) {
-        console.log('line 78: ' + pdfName)
+        console.log('line 68: ' + pdfName)
         const dailyFX = spawn('python', ['dailyfx.py', pdfName])
         dailyFX.stdout.on('data', (data) => {
-            var datafrompy = JSON.stringify(data)
-            var arr = JSON.parse(datafrompy);
+            console.log('line 71: ' + data)
+            var arr = JSON.parse(data);
             for (var i = 0; i < arr.length; i++) {
                 var code = arr[i].Code;
                 var currency = arr[i].Currency;
                 var bid = arr[i].Bid;
                 var ask = arr[i].Ask;
-                console.log(code, currency, bid, ask)
+                console.log(code + ' ***line 79:*** ' + currency, bid, ask)
             }
         })
 

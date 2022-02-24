@@ -3,6 +3,20 @@
 .body {
     font-family: 'Lato', sans-serif;
     font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-primary {
+    background-color: red !important;
+    border-color: red !important;
+}
+
+.btn-primary2 {
+    background-color: black !important;
+    border-color: black !important;
+    color: white !important;
 }
 
 .navBar {
@@ -22,6 +36,14 @@
     color: white !important;
     font-weight: bold !important;
     font-size: 1.1em;
+}
+
+.section {
+    padding: 40px 0 25px;
+}
+
+p {
+    font-size: 18px !important;
 }
 
 .featureCard {
@@ -44,4 +66,100 @@
 
 #buyRate:invalid {
     color: red;
+}
+
+.updateHeroBanner {
+    width: 100% !important;
+    height: 450px !important;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* footer */
+
+.footer-basic {
+    padding: 30px 0 20px;
+    background-color: #000000;
+    color: #4b4c4d;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-basic ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.footer-basic li {
+    padding: 0 10px;
+}
+
+.footer-basic ul a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer-basic ul a:hover {
+    opacity: 1;
+}
+
+.footer-basic .social {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.footer-basic .social>a {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    margin: 0 8px;
+    color: inherit;
+    opacity: 0.75;
+}
+
+.footer-basic .social>a:hover {
+    opacity: 0.9;
+}
+
+.footer-basic .copyright {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+    margin-bottom: 0;
+}
+
+/* File Upload */
+#fileUpload{
+    display: none;
+}
+
+.custom-file-label.rounded-pill {
+    border-radius: 50rem;
+}
+
+.custom-file-label.rounded-pill::after {
+    border-radius: 0 50rem 50rem 0;
+}
+
+#uploadButtonText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: auto;
+}
+
+.sampleImg {
+    width: 100%;
 }
