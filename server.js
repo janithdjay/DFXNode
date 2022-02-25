@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const fs = require('fs')
 const multer = require('multer')
 const { spawn } = require('child_process')
+const path = './pdfs/'
 
 const jsonParser = bodyParser.json()
 
@@ -14,7 +15,7 @@ var pdfName = '';
 //Setup storage
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, "public")
+        cb(null, "pdfs")
     },
     filename: function (req, file, cb) {
         pdfName = Date.now() + '.pdf';
@@ -52,40 +53,35 @@ app.get('/fxupdate', (req, res) => {
 })
 
 app.post('/pdf', jsonParser, upload.single("myPDF"), (req, res) => {
-    //console.log(JSON.stringify(req.body))
-    //res.send('works great')
-    //var data = JSON.stringify(req.body)
-    //var arr = JSON.parse(data);
-    //for (var i = 0; i < arr.length; i++) {
-    //    var code = arr[i].Code;
-    //    var currency = arr[i].Currency;
-    //    var bid = arr[i].Bid;
-    //    var ask = arr[i].Ask;
-    //    console.log(code, currency, bid, ask)
-    //}
 
     if (req.file) {
         console.log('line 68: ' + pdfName)
         const dailyFX = spawn('python', ['dailyfx.py', pdfName])
         dailyFX.stdout.on('data', (data) => {
-            console.log('line 71: ' + data)
+
             var arr = JSON.parse(data);
-            for (var i = 0; i < arr.length; i++) {
-                var code = arr[i].Code;
-                var currency = arr[i].Currency;
-                var bid = arr[i].Bid;
-                var ask = arr[i].Ask;
-                console.log(code + ' ***line 79:*** ' + currency, bid, ask)
-            }
+            res.status(200).send({
+                data: arr
+            })
         })
 
         dailyFX.stderr.on('data', (data) => {
-            console.log('line 94: ' + data)
-        })
+            console.log('line 68: ' + data)
 
-        res.status(200).send({
-            ok: true,
-            status: 'file uploaded'
+            try {
+                fs.unlinkSync(path + pdfName)
+                res.status(400).send({
+                    ok: false,
+                    error: 'something went wrong'
+                })
+            } catch (err) {
+                console.error(err)
+                //Admin needs to be notified to remove the file manually
+                res.status(400).send({
+                    ok: false,
+                    error: 'something went wrong'
+                })
+            }
         })
     } else {
         res.status(400).send({
@@ -93,7 +89,6 @@ app.post('/pdf', jsonParser, upload.single("myPDF"), (req, res) => {
             error: 'something went wrong'
         })
     }
-
 })
 
 //Make sure this is at the bottom

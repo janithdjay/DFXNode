@@ -6,6 +6,13 @@
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div id="loading-wrapper" style="display: none;">
+        <div id="loading-text">LOADING</div>
+        <div id="loading-content"></div>
+    </div>
+    <!-- Preloader End-->
+
     <div class="main">
         <%- include('./partials/nav.ejs') %>
 
@@ -111,34 +118,96 @@
             <div class="section">
                 <div class="container uploadSection">
                     <h2 class="text-muted mb-4">Update FX Rates</h2>
-                    <div class="container my-5">
-                        <form method="POST" action="/pdf" enctype="multipart/form-data">
-                            <!-- Custom bootstrap upload file-->
-                            <div class="mb-3 d-grid gap-2 col-6 mx-auto">
-                                <label for="fileUpload" class="file-upload btn btn-primary2 btn-block shadow"
-                                    id="uploadButtonText">Select a PDF file ...
-                                </label>
-                                <input id="fileUpload" type="file" accept=".pdf" name="myPDF">
-                            </div>
-                            <!-- End -->
-                            <div class="mb-3 d-grid col-3 mx-auto">
-                                <button type="submit" class="btn btn-primary submitButton btn-sm">Upload</button>
-                            </div>
-                        </form>
+                    <form method="POST" action="/pdf" enctype="multipart/form-data">
+                        <!-- Custom bootstrap upload file-->
+                        <div class="mb-3 d-grid gap-2 col-6 mx-auto">
+                            <label for="fileUpload" class="file-upload btn btn-primary2 btn-block shadow"
+                                id="uploadButtonText">Select a PDF file ...
+                            </label>
+                            <input id="fileUpload" type="file" accept=".pdf" name="myPDF">
+                        </div>
+                        <!-- End -->
+                        <div class="mb-3 d-grid col-3 mx-auto">
+                            <button type="button" class="btn btn-primary submitButton btn-sm shadow-none"
+                                id="uploadSubmit">Upload</button>
+                        </div>
+                    </form>
+
+                    <!--Display table data-->
+                    <div class="section" id="dataTableSection" style="display: none;">
+                        <h4 class="text-muted mb-4">Your data table</h4>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">COUNTRY</th>
+                                        <th scope="col">CCY</th>
+                                        <th scope="col">BUY</th>
+                                        <th scope="col">SELL</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ratesTableRows">
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!--Upload How to section-->
             <div class="section">
                 <div class="container">
                     <h2 class="text-muted mb-4">How to</h2>
                     <div class="">
                         <p>Updating FX rates on your website is easy now. Either select your country site and enter the
-                            details or simply upload a template file. Our AI powered toolkit will extract the table of
+                            details or simply upload a template file. Our Machine Learning powered toolkit will extract
+                            the table of
                             data automatically and all you have to do next is click the Submit button. Thats it!. Your
                             details will be pushed to the live site instantly.</p>
                     </div>
                     <a href="/imgs/pdf_sample_image.png" data-lightbox="image-1">Sample image</a>
+                    <div class="row mt-5">
+                        <div class="col-12 col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="img-wrapper">
+                                    <img src="/imgs/instant-message.png" class="card-img-top howStepImg" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Prepare the PDF</h5>
+                                    <p class="card-text">Download & update the correct PDF file with the country,
+                                        currency codes and the bid and ask rates. Make sure you have picked the correct
+                                        version of the PDF allocated to your country's website.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="img-wrapper">
+                                    <img src="/imgs/instant-message.png" class="card-img-top howStepImg" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Upload</h5>
+                                    <p class="card-text">Click on the "Select a PDF" button and select the PDF file you
+                                        want to upload to your website. Our Machine Learning powered toolkit will
+                                        automatically extract the data on your PDF and will validate for it's accuracy.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="img-wrapper">
+                                    <img src="/imgs/instant-message.png" class="card-img-top howStepImg" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Review & confirm</h5>
+                                    <p class="card-text"> Once the application complete it's process, you will be
+                                        prompted with the etraxted data table. Check if everything is fine, and click on
+                                        the "Submit" button. Your data will be updated on the website instantly.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -422,6 +491,8 @@
             </div>
 
             <%- include('./partials/footer.ejs') %>
+
+                <script src="/js/main.js"></script>
 
     </div>
 </body>

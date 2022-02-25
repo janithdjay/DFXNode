@@ -4,8 +4,7 @@ import camelot
 import pandas as pd
 import ghostscript
 
-#pdfName = 
-pdfName = "./public/" + str(sys.argv[1])
+pdfName = "./pdfs/" + str(sys.argv[1])
 
 table = camelot.read_pdf(pdfName, flavor='lattice') 
 table1 = table[0].df
