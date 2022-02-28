@@ -55,19 +55,18 @@ app.get('/fxupdate', (req, res) => {
 app.post('/pdf', jsonParser, upload.single("myPDF"), (req, res) => {
 
     if (req.file) {
-        console.log('line 68: ' + pdfName)
         const dailyFX = spawn('python', ['dailyfx.py', pdfName])
-        dailyFX.stdout.on('data', (data) => {
+        dailyFX.stdout.on('data', async (data) => {
 
             var arr = JSON.parse(data);
-            res.status(200).send({
+            await res.status(200).send({
                 data: arr
             })
+            fs.unlinkSync(path + pdfName)
+
         })
 
         dailyFX.stderr.on('data', (data) => {
-            console.log('line 68: ' + data)
-
             try {
                 fs.unlinkSync(path + pdfName)
                 res.status(400).send({
@@ -79,7 +78,7 @@ app.post('/pdf', jsonParser, upload.single("myPDF"), (req, res) => {
                 //Admin needs to be notified to remove the file manually
                 res.status(400).send({
                     ok: false,
-                    error: 'something went wrong'
+                    error: 'something went wrong..'
                 })
             }
         })

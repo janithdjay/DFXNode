@@ -4,6 +4,11 @@ const uploadSubmit = document.getElementById('uploadSubmit');
 var dataTableSection = document.getElementById('dataTableSection');
 var ratesTableRows = document.getElementById('ratesTableRows');
 var loadingWrapper = document.getElementById('loading-wrapper');
+var submitDataModalCloseBtn = document.getElementById('submitDataModalCloseBtn');
+var pickManualBtn = document.getElementById('pickManualBtn');
+var manualSection = document.getElementById('manualSection')
+var pickUploadMethodBtn = document.getElementById('pickUploadMethodBtn');
+var uploadDocSection = document.getElementById('uploadDocSection')
 
 fileUpload.onclick = function (e) {
     e.target.value = '';
@@ -15,14 +20,19 @@ fileUpload.onchange = function (e) {
 };
 
 uploadSubmit.onclick = function () {
-    loadingWrapper.style.display = 'block';
-    upload(fileUpload.files[0]);
+    if (fileUpload.files.length > 0) {
+        loadingWrapper.style.display = 'block';
+        upload(fileUpload.files[0]);
+    }
+    else {
+        alert('Please select a PDF file to upload.');
+    }
 }
 
 function upload(file) {
     ratesTableRows.innerHTML = ''; // reset the table
 
-    const formData = new FormData()
+    const formData = new FormData();
     formData.append('myPDF', file);
 
     fetch('/pdf', {
@@ -39,7 +49,7 @@ function upload(file) {
             var currency = element.Currency;
             var bid = element.Bid;
             var ask = element.Ask;
-            
+
             var tr = document.createElement('tr');
             var td1 = document.createElement('td');
             var td2 = document.createElement('td');
@@ -67,3 +77,16 @@ function upload(file) {
     });
 };
 
+submitDataModalCloseBtn.onclick = function () {
+    dataTableSection.style.display = 'none';
+}
+
+pickManualBtn.onclick = function () {
+    manualSection.style.display = 'block';
+    uploadDocSection.style.display = 'none';
+}
+
+pickUploadMethodBtn.onclick = function () {
+    manualSection.style.display = 'none';
+    uploadDocSection.style.display = 'block';
+}

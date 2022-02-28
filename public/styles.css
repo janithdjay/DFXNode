@@ -22,6 +22,11 @@
     color: white !important;
 }
 
+.row {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
 /* #region Preloader */
 #loading-wrapper {
     position: fixed;
@@ -241,8 +246,13 @@ p {
         padding: 5px 0 0px;
         height: 40px;
     }
+
     .footer-basic ul a {
         font-size: 12px;
+    }
+
+    .pickMethodBtn {
+        width: 60% !important;
     }
 }
 
@@ -330,20 +340,30 @@ p {
     position: relative;
     overflow: hidden;
     margin: 15px;
-  }
-  
-  .img-wrapper:after {
+}
+
+.img-wrapper:after {
     content: '';
     display: block;
     padding-top: 100%;
-  }
-  
-  .img-wrapper img {
-    width: auto;
+}
+
+.titleLine {
+    height: 7vh;
+}
+
+.img-wrapper img {
+    width: 100%;
     height: 100%;
     max-width: none;
     position: absolute;
     left: 50%;
     top: 0;
     transform: translateX(-50%);
-  }
+}
+
+@media only screen and (min-width: 600px) {
+    .pickMethodBtn {
+        width: 20% !important;
+    }
+}

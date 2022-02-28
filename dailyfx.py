@@ -6,6 +6,7 @@ import ghostscript
 
 pdfName = "./pdfs/" + str(sys.argv[1])
 
+
 table = camelot.read_pdf(pdfName, flavor='lattice') 
 table1 = table[0].df
 new_header = table1.iloc[0] #grab the first row for the header
