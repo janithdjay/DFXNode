@@ -81,12 +81,16 @@ submitDataModalCloseBtn.onclick = function () {
     dataTableSection.style.display = 'none';
 }
 
-pickManualBtn.onclick = function () {
-    manualSection.style.display = 'block';
-    uploadDocSection.style.display = 'none';
-}
+if (pickManualBtn) {
 
-pickUploadMethodBtn.onclick = function () {
-    manualSection.style.display = 'none';
-    uploadDocSection.style.display = 'block';
+    pickManualBtn.onclick = function () {
+        manualSection.style.display = 'block';
+        uploadDocSection.style.display = 'none';
+    }
+}
+if (pickUploadMethodBtn) {
+    pickUploadMethodBtn.onclick = function () {
+        manualSection.style.display = 'none';
+        uploadDocSection.style.display = 'block';
+    }
 }
